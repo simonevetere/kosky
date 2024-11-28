@@ -1,0 +1,71 @@
+body {
+  background-color: #333;
+  color: #fff;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+header {
+  background-color: #222;
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+footer {
+  font-size: 8px;
+}
+
+#myVideo {
+  position: fixed;
+  top: 0;
+  left: 50%; /* Posiziona il lato sinistro del video al centro */
+  transform: translateX(-50%); /* Sposta il video a sinistra della metà della sua larghezza */
+  width: 100%; 
+  z-index: -1;
+}
+
+.admin-button {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+#testo {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+footer {
+  background-color: #222;
+  padding: 1rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  h1 {
+      font-size: 2rem;
+  }
+  #myVideo {
+    position: fixed;
+    top: 0;
+    left: 50%; /* Mantieni il centraggio orizzontale */
+    transform: translateX(-50%);
+    z-index: -1;
+    width: 300%;
+  }
+}

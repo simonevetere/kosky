@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kosky</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+    <header>
+        <button class="admin-button" onclick="window.location = 'https://amministrazione.kosky.it'">amministrazione</button>
+    </header>
+		<video autoplay muted loop id="myVideo">
+        <source id="sourcevideo" src="vid/sigla_trim_low.mp4" type="video/mp4">
+    </video>
+		<video style="display:none;" autoplay muted loop id="load" src="vid/sigla_trim.mp4">
+    </video>
+
+		<script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+
+		<dotlottie-player onclick="window.location = 'https://terribile.space'" src="https://lottie.host/9ee46b02-06d9-4f3d-b58d-894706d76640/Ug2gQBGp1U.json" background="transparent" speed="1" style="position: fixed;z-index: 9999;width: 64px; height: 64px; left: 0; top: 0;" loop autoplay></dotlottie-player>
+
+    <div id="testo">
+    </div>
+    <div id="testo">
+    </div>
+    <div id="testo">
+        <p>Grazie, per averci cercato<br>il sito è in costruzione<br>a presto.<br></p>
+    </div>
+
+    <footer>
+        per accedere all'amministrazione in alto a destra <br>  contatti info@kosky.it <br> &copy; 2024 La Taverna del Kosky <br>Code by &copy;2024 <a href="https://terribile.space">terribile.SPACE</a> 
+    </footer>
+		<script src="script.js"></script>
+</body>
+</html>
