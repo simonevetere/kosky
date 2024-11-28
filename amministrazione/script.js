@@ -4,7 +4,7 @@ const email = localStorage.getItem('email');
 if (email) {
   // Email presente, crea i link
   document.body.innerHTML = `
-  
+
       <div id="back-dot" onclick="window.location.href='/?version=1'">
         <img src="/img/back.png" alt="Back" />
       </div>
@@ -12,9 +12,8 @@ if (email) {
       <dotlottie-player onclick="window.location = 'https://terribile.space'" src="https://lottie.host/9ee46b02-06d9-4f3d-b58d-894706d76640/Ug2gQBGp1U.json" background="transparent" speed="1" style="position: fixed;z-index: 9999;width: 64px; height: 64px; left: 0; top: 0;" loop autoplay></dotlottie-player>
 
       <div id="inside">
-        <a href="https://webmail.register.it/appsuite">Mail</a>
-        <a href="#">YouTube (Work in progress)</a>
-        <a href="mailto:${email}">Contattami (${email})</a>
+        <a href="https://webmail.register.it">Mail</a>
+        <a href="https://youtube.com">YouTube (Work in progress)</a>
       </div>
 
       <footer>
