@@ -13,7 +13,7 @@ if (email) {
 
       <div id="inside">
         <a href="https://webmail.register.it">Mail</a>
-        <a href="https://youtube.com">YouTube (Work in progress)</a>
+        <a href="https://www.youtube.com/@latanadelkosky">canale YouTube</a>
       </div>
 
       <footer>
