@@ -4,71 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Koskt admin</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      margin: 0;
-      overflow-x: hidden;
-      overflow-y: hidden;
-    }
-
-    a {
-      display: block;
-      margin-bottom: 1rem;
-      padding: 0.5rem 1rem;
-      background-color: #4CAF50;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-
-    footer {
-      background-color: #000;
-      color: white;
-      font-size: 10px;
-      width: 101%;
-      text-align: center;
-      position: absolute;
-      bottom: 0;
-      height: 8%;
-    }
-
-  </style>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
-  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>  
 
   <dotlottie-player onclick="window.location = 'https://terribile.space'" src="https://lottie.host/9ee46b02-06d9-4f3d-b58d-894706d76640/Ug2gQBGp1U.json" background="transparent" speed="1" style="position: fixed;z-index: 9999;width: 64px; height: 64px; left: 0; top: 0;" loop autoplay></dotlottie-player>
 
-  <a href="https://webmail.register.it/appsuite">Mail</a>
-  <a href="#">YouTube (Work in progress)</a>
-
-  <footer>
-      <br> &copy; 2024 La Taverna del Kosky <br>Code by &copy;2024 <a href="https://terribile.space">terribile.SPACE</a> 
-  </footer>
-
-  <script>
-    // Controlla se l'email è presente nel localStorage
-    const email = localStorage.getItem('email');
-
-    if (email) {
-      // Email presente, crea i link
-      document.body.innerHTML = `
-        <a href="https://webmail.register.it/appsuite">Mail</a>
-        <a href="#">YouTube (Work in progress)</a>
-        <a href="mailto:${email}">Contattami (${email})</a>
-      `;
-    } else {
-      // Email non presente, reindirizza a /login
-      window.location = '/login'; 
-    }
-  </script>
+  <script src="script.js"></script>
 
 </body>
 </html>

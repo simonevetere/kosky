@@ -1,0 +1,72 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+  }
+
+  div {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+
+  div a {
+    display: block;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+
+  footer {
+    background-color: #000;
+    color: white;
+    font-size: 10px;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    height: 8%;
+  }
+
+  footer a { 
+    color: #0d6efd; /* Blu di Bootstrap */
+    text-decoration: none; 
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+#back-dot {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  width: 50px;  /* Aumenta la dimensione per contenere l'immagine */
+  height: 50px;
+  background-color: transparent;  /* Rendi lo sfondo trasparente */
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#back-dot img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+#back-dot:hover {
+  opacity: 0.8;
+}

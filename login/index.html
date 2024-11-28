@@ -4,64 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      margin: 0;
-      overflow-x: hidden;
-      overflow-y: hidden;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      width: 300px;
-    }
-
-    label {
-      margin-bottom: 0.5rem;
-    }
-
-    input {
-      padding: 0.5rem;
-      margin-bottom: 1rem;
-      border: 1px solid #ccc;
-    }
-
-    button {
-      padding: 0.5rem 1rem;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-
-    footer {
-      background-color: #000;
-      color: white;
-      font-size: 10px;
-      width: 101%;
-      text-align: center;
-      position: absolute;
-      bottom: 0;
-      height: 8%;
-    }
-
-  </style>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
-  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>  
 
   <dotlottie-player onclick="window.location = 'https://terribile.space'" src="https://lottie.host/9ee46b02-06d9-4f3d-b58d-894706d76640/Ug2gQBGp1U.json" background="transparent" speed="1" style="position: fixed;z-index: 9999;width: 64px; height: 64px; left: 0; top: 0;" loop autoplay></dotlottie-player>
 
   <h1>Kosky login</h1>
 
+  <div id="back-dot" onclick="window.location.href='/?version=1'">
+    <img src="/img/back.png" alt="Back" />
+  </div>
+  
   <form id="loginForm">
     <label for="email">Email:</label>
     <input type="email" id="email" name="email" required>
@@ -69,64 +25,22 @@
     <label for="password">Password:</label>
     <input type="password" id="password" name="password" required>
 
-    <button type="submit">Accedi</button>
+    <button id="Accedi" type="submit">Accedi</button>
   </form>
 
+  <button onclick="apriPopup()">accedi con PIN</button>
+
+  <div id="passwordPopup" class="popup">
+    <label for="pin">Inserisci il PIN:</label>
+    <input type="password" id="pin">
+    <button onclick="controllaPin()">Accedi</button>
+    <p id="suggerimento"></p>
+  </div>
+
   <footer>
-     <br> &copy; 2024 La Taverna del Kosky <br>Code by &copy;2024 <a href="https://terribile.space">terribile.SPACE</a> 
+      <br> &copy; 2024 La Taverna del Kosky <br><br>Code by &copy;2024 <a href="https://terribile.space">terribile.SPACE</a>  
   </footer>
 
-  <script>
-    const loginForm = document.getElementById('loginForm');
-
-    loginForm.addEventListener('submit', function(event) {
-      event.preventDefault(); // Impedisci il refresh della pagina
-
-      email = document.getElementById('email').value;
-      password = document.getElementById('password').value;
-
-      email = cripta(email,chiave);
-      password = cripta(password,chiave);
-      // Controlla le credenziali
-      if (
-        (email === 'âÒâÐÖËe®­ë×p¨¦àÞ^é' && password === '¿ÛäÈÍÚ«§w«àákc§') ||
-        (email === 'âÊâÖÍÒf §ÜÛ¢¡ä¥¡è¤©Òé' && password === '¿ÛäÈÍÚ«§w«àákc§')
-      ) {
-        // Login riuscito
-        localStorage.setItem('email', decripta(email,chiave)); // Salva l'email nel localStorage
-        window.location.href = '/amministrazione'; // Reindirizza alla pagina principale
-      } else {
-        // Login fallito
-        alert('Credenziali non valide.');
-      }
-    });
-
-    function cripta(testo, chiave) {
-      let risultato = '';
-      for (let i = 0; i < testo.length; i++) {
-        let charCode = testo.charCodeAt(i);
-        let chiaveCode = chiave.charCodeAt(i % chiave.length);
-        charCode = (charCode + chiaveCode) % 256; // Limita il codice a 256 caratteri
-        risultato += String.fromCharCode(charCode);
-      }
-      return risultato;
-    }
-
-    function decripta(testoCriptato, chiave) {
-      let risultato = '';
-      for (let i = 0; i < testoCriptato.length; i++) {
-        let charCode = testoCriptato.charCodeAt(i);
-        let chiaveCode = chiave.charCodeAt(i % chiave.length);
-        charCode = (charCode - chiaveCode + 256) % 256; // Gestisci i numeri negativi
-        risultato += String.fromCharCode(charCode);
-      }
-      return risultato;
-    }
-
-  
-  const chiave = "oiuahf78394yr0293ue02u90";
-
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
