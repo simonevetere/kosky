@@ -5,7 +5,7 @@ if (email) {
   // Email presente, crea i link
   document.body.innerHTML = `
 
-      <div id="back-dot" onclick="window.location.href='/?version=1'">
+      <div id="back-dot" onclick="window.location.href='/'">
         <img src="/img/back.png" alt="Back" />
       </div>
       
