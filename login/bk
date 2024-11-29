@@ -1,0 +1,63 @@
+
+    const loginForm = document.getElementById('loginForm');
+
+    loginForm.addEventListener('submit', function(event) {
+      event.preventDefault(); // Impedisci il refresh della pagina
+
+      email = document.getElementById('email').value;
+      password = document.getElementById('password').value;
+
+      email = cripta(email,chiave);
+      password = cripta(password,chiave);
+      // Controlla le credenziali
+      if (
+        (email === 'âÒâÐÖËe®­ë×p¨¦àÞ^é' && password === '¿ÛäÈÍÚ«§w«àákc§') ||
+        (email === 'âÊâÖÍÒf §ÜÛ¢¡ä¥¡è¤©Òé' && password === '¿ÛäÈÍÚ«§w«àákc§')
+      ) {
+        // Login riuscito
+        localStorage.setItem('email', decripta(email,chiave)); // Salva l'email nel localStorage
+        window.location.href = '/amministrazione'; // Reindirizza alla pagina principale
+      } else {
+        // Login fallito
+        alert('Credenziali non valide.');
+      }
+    });
+
+    function cripta(testo, chiave) {
+      let risultato = '';
+      for (let i = 0; i < testo.length; i++) {
+        let charCode = testo.charCodeAt(i);
+        let chiaveCode = chiave.charCodeAt(i % chiave.length);
+        charCode = (charCode + chiaveCode) % 256; // Limita il codice a 256 caratteri
+        risultato += String.fromCharCode(charCode);
+      }
+      return risultato;
+    }
+
+    function decripta(testoCriptato, chiave) {
+      let risultato = '';
+      for (let i = 0; i < testoCriptato.length; i++) {
+        let charCode = testoCriptato.charCodeAt(i);
+        let chiaveCode = chiave.charCodeAt(i % chiave.length);
+        charCode = (charCode - chiaveCode + 256) % 256; // Gestisci i numeri negativi
+        risultato += String.fromCharCode(charCode);
+      }
+      return risultato;
+    }
+
+    const chiave = "oiuahf78394yr0293ue02u90";
+
+    // Funzioni per il popup
+    function apriPopup() {
+      document.getElementById('passwordPopup').style.display = 'block';
+    }
+
+    function controllaPin() {
+      var pin = document.getElementById('pin').value;
+      pin = cripta(pin,chiave)
+      if (pin === ' ¢¦¡') {
+        document.getElementById('email').value = decripta('âÊâÖÍÒf §ÜÛ¢¡ä¥¡è¤©Òé',chiave);
+        document.getElementById('password').value = decripta("¿ÛäÈÍÚ«§w«àákc§",chiave);
+        document.getElementById('Accedi').click();
+      }
+    }
