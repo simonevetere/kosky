@@ -13,7 +13,7 @@ function login(){
     loginData.password = password;
   }
 
-  fetch('https://kosky.it/login', {
+  fetch('https://kosky.it/wslogin', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
