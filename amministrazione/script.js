@@ -27,11 +27,13 @@ function login(){
       return true;
     } else {
       alert('Credenziali non valide.');
+      localStorage.setItem('login', 'false');
       return false;
     }
   })
   .catch(error => {
     console.error('Errore:', error);
+    localStorage.setItem('login', 'false');
     return false;
   });
 };
@@ -64,7 +66,7 @@ function accedi(){
     document.head.appendChild(script); 
   } else {
     // Email non presente, reindirizza a /login
-   //window.location = '/login'; 
+   window.location = '/login'; 
   }
 }
 
