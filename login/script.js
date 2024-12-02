@@ -11,5 +11,10 @@ function apriPopup() {
 
 
 function controllaPin() {
+
+  localStorage.setItem('email',document.getElementById('email').value);
+  localStorage.setItem('password',document.getElementById('password').value);
+  localStorage.setItem('pin',document.getElementById('pin').value);
+
   login();
 }
