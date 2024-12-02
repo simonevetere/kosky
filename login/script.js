@@ -27,7 +27,9 @@ function login(){
       localStorage.setItem('email', email);
       localStorage.setItem('pin', pin);
       localStorage.setItem('password', password);
-      window.location.href = '/amministrazione'; // Reindirizza alla pagina principale
+
+      setTimeout(() => window.location.href = '/amministrazione', 1000);
+
     } else {
       alert('Credenziali non valide.');
     }

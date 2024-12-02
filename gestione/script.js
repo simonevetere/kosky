@@ -236,6 +236,7 @@ function handleError(error) {
 
 function filter(id){
   filtrato = !filtrato;
+  tot = 0;
 
   if(filtrato){
     window.location = window.location;
@@ -244,9 +245,13 @@ function filter(id){
     for(i = 1; i < document.getElementsByTagName("table")[0].rows.length;i++){
       if(!confrontaStringhe(id, document.getElementsByTagName("table")[0].rows[i].firstChild.textContent)){
         document.getElementsByTagName("table")[0].rows[i].style = "display: none";
+      } else {
+        tot += parseFloat(document.getElementsByTagName("table")[0].rows[i].children[2].textContent);
       }
     }
   }
+
+  document.getElementsByTagName("table")[1].rows[0].children[1].textContent = tot + " €";
 }
 
 function confrontaStringhe(str1, str2) {
