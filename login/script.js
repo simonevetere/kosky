@@ -1,7 +1,7 @@
 const loginForm = document.getElementById('loginForm');
 
 function accedi(){
-  return true;
+  window.location = "/amministrazione/"
 }
 
 // Funzioni per il popup
