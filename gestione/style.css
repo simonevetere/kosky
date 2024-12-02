@@ -111,7 +111,7 @@ th {
 
 
 footer {
-  position: absolute;
+  position: fixed;
   text-align: center;
   bottom : 0;
   font-size: 0.9em;
