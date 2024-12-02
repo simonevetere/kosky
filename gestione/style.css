@@ -1,0 +1,210 @@
+body {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  color: #333; 
+  box-sizing: border-box;
+}
+
+/* Rimuovi gli stili div, a meno che non siano necessari per elementi specifici */
+
+/* Stili per i link in generale (puoi spostarli in un selettore più specifico se necessario) */
+a { 
+  display: block;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+footer {
+  background-color: #000;
+  color: white;
+  font-size: 10px; 
+  width: 100%;
+  text-align: center;
+  /* Evita position: absolute e height: 8% se possibile, 
+     potrebbero causare problemi di sovrapposizione */
+  padding: 10px 0; /* Aggiungi padding invece di altezza fissa */
+}
+
+footer a {  
+  color: #0d6efd; 
+  text-decoration: none;  
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+#back-dot {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  width: 50px;  /* Aumenta la dimensione per contenere l'immagine */
+  height: 50px;
+  background-color: transparent;  /* Rendi lo sfondo trasparente */
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#back-dot img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+#back-dot:hover {
+  opacity: 0.8;
+}
+
+.loader {
+  margin: 0 0 2em;
+  height: 100px;
+  width: 20%; 
+  text-align: center;
+  padding: 1em;
+  margin: 0 auto 1em; 
+  display: inline-block;
+  vertical-align: top;
+}
+
+svg path,
+svg rect {
+  fill: #4CAF50; 
+}
+
+/* Rimuovi la ripetizione di #back-dot */ 
+
+table {
+  width: 100%;
+  font-size: 8px;
+  margin: 20px auto;
+  border-collapse: collapse;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow-x: auto; 
+  word-break: break-all; /* Aggiunto per evitare che le parole vengano tagliate */
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd; 
+  /* Puoi aggiungere min-width alle celle per evitare che diventino troppo strette */
+  /* min-width: 50px; */ 
+}
+
+th {
+  background-color: #28a745;
+  color: white;
+}
+
+
+footer {
+  position: absolute;
+  text-align: center;
+  bottom : 0;
+  font-size: 0.9em;
+  color: #666; /* Lighter gray for footer text */
+}
+
+footer a {
+  color: #28a745 !important;
+  text-decoration: none !important;
+  display: contents;
+  margin-bottom: 0;
+  padding: 0;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+#costPopup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  z-index: 100; /* Ensure it's above other elements */
+  width: 200px;
+}
+
+#costPopup h2 {
+  color: #28a745; /* Green heading */
+}
+
+#costPopup label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#costPopup input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+#costPopup button {
+  background-color: #28a745; /* Green buttons */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+#costPopup button:hover {
+  background-color: #218838; /* Darker green on hover */
+}
+
+#error {
+  color: red; 
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+}
+#inside {
+  text-align: center; /* Centra il pulsante */
+
+}
+
+#costPopup button,
+#inside button { /* Stile per tutti i pulsanti */
+  background-color: #28a745; 
+  color: white;
+  padding: 10px 20px; /* Più padding */
+  border: none;
+  border-radius: 5px; /* Angoli arrotondati */
+  cursor: pointer;
+  margin-top: 20px; /* Spazio sopra il pulsante */
+  transition: background-color 0.3s ease; /* Transizione fluida */
+}
+
+#costPopup button:hover,
+#inside button:hover {
+  background-color: #218838; 
+}
+
+.total-row { /* Stile per la riga del totale */
+  font-weight: bold;
+  margin-top: 10px; /* Spazio sopra il totale */
+}
+
+.total-row td:last-child { /* Allinea l'importo a destra */
+  text-align: right;
+}

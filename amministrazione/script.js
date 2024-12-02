@@ -52,6 +52,7 @@ function accedi(){
         <div id="inside">
           <a href="https://webmail.register.it">Mail</a>
           <a href="https://www.youtube.com/@latanadelkosky">canale YouTube</a>
+          <a href="/gestione">gestione costi</a>
         </div>
 
         <footer>
@@ -71,4 +72,5 @@ function accedi(){
 }
 
 login();
-setTimeout(() => accedi(), 2000);
+
+accedi();
