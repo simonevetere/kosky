@@ -28,7 +28,7 @@ function login(){
       localStorage.setItem('pin', pin);
       localStorage.setItem('password', password);
 
-      setTimeout(() => window.location.href = '/amministrazione', 1000);
+      window.location.href = '/amministrazione/';
 
     } else {
       alert('Credenziali non valide.');
@@ -46,5 +46,5 @@ function apriPopup() {
 
 
 function controllaPin() {
-  login()
+  login();
 }
