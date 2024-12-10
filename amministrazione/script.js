@@ -13,6 +13,7 @@ function accedi(){
           <a href="https://webmail.register.it">Mail</a>
           <a href="https://www.youtube.com/@latanadelkosky">canale YouTube</a>
           <a href="/gestione">gestione costi</a>
+          <a href="/utility">REC utility</a>
         </div>
 
         <footer>

@@ -1,0 +1,60 @@
+
+body {
+  font-family: sans-serif;
+  background-color: #333;
+  transition: background-color 0.5s ease;
+  display: flex; /* Per centrare i pulsanti */
+  flex-direction: column; /* Allinea gli elementi in colonna */
+  align-items: center; /* Centra gli elementi orizzontalmente */
+  min-height: 100vh; /* Assicura che il body occupi l'intera altezza dello schermo */
+}
+
+#timer {
+  font-size: 48px;
+  text-align: center;
+  margin-top: 50px;
+  color: white;
+}
+
+.red {
+  background-color: red;
+}
+
+.buttons {
+  margin-top: 20px; /* Spazio sopra i pulsanti */
+  display: flex; /* Allinea i pulsanti in riga */
+  justify-content: center; /* Centra i pulsanti orizzontalmente */
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin: 0 10px; /* Spazio tra i pulsanti */
+  cursor: pointer;
+  border: none; /* Rimuove il bordo di default */
+  border-radius: 5px; /* Angoli arrotondati */
+  background-color: #555; /* Colore di sfondo */
+  color: white; /* Colore del testo */
+}
+
+button:hover {
+  background-color: #777; /* Colore di sfondo al passaggio del mouse */
+}
+
+#ahhhGif {
+  position: fixed; /* Posizione fissa sullo schermo */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centra l'immagine */
+  z-index: 100; /* Assicura che l'immagine sia in primo piano */
+  display: none; /* Nasconde l'immagine inizialmente */
+}
+
+#rick-roll {
+  position: fixed; /* Posizione fissa sullo schermo */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centra l'immagine */
+  z-index: 100; /* Assicura che l'immagine sia in primo piano */
+  display: none; /* Nasconde l'immagine inizialmente */
+}
