@@ -1,5 +1,5 @@
 
-let timeLeft = 27000; // 45 minuti in secondi
+let timeLeft = 2700; // 45 minuti in secondi
 let isRed = false;
 let timerInterval;
 
