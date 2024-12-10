@@ -20,6 +20,10 @@ body {
   background-color: red;
 }
 
+.green {
+  background-color: #325220;
+}
+
 .buttons {
   margin-top: 20px; /* Spazio sopra i pulsanti */
   display: flex; /* Allinea i pulsanti in riga */

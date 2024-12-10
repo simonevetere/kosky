@@ -9,6 +9,8 @@ const resetButton = document.getElementById("resetButton");
 const ciackButton = document.getElementById("ciackButton");
 
 function startTimer() {
+
+  bodyElement.classList.remove("green");
   timerInterval = setInterval(function() {
     let minutes = Math.floor(timeLeft / 60);
     let seconds = timeLeft % 60;
