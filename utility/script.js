@@ -1,5 +1,5 @@
 
-let timeLeft = 5; // 45 minuti in secondi
+let timeLeft = 27000; // 45 minuti in secondi
 let isRed = false;
 let timerInterval;
 
@@ -41,7 +41,7 @@ function blink() {
     // Mostra l'immagine ahhh.gif
     const rickroll = document.getElementById("rick-roll");
     rickroll.style.display = "block";
-  }, 2000); 
+  }, 30000); 
 
   setInterval(function() {
     if (isRed) {
