@@ -73,3 +73,51 @@ function playCiackSound() {
 
 resetButton.addEventListener("click", resetTimer);
 ciackButton.addEventListener("click", playCiackSound);
+
+const videoElement = document.getElementById('videoElement');
+const cameraSelect = document.getElementById('cameraSelect');
+
+// Funzione per ottenere la lista delle webcam disponibili
+async function getCameras() {
+  try {
+    const devices = await navigator.mediaDevices.enumerateDevices();
+    const cameras = devices.filter(device => device.kind === 'videoinput');
+    return cameras;
+  } catch (err) {
+    console.error("Errore nell'ottenere la lista delle webcam:", err);
+    return [];
+  }
+}
+
+// Funzione per popolare il menu a tendina con le webcam
+async function populateCameraSelect() {
+  const cameras = await getCameras();
+  cameras.forEach(camera => {
+    const option = document.createElement('option');
+    option.value = camera.deviceId;
+    option.text = camera.label || `Camera ${cameraSelect.length + 1}`;
+    cameraSelect.appendChild(option);
+  });
+}
+
+// Funzione per avviare la webcam selezionata
+async function startCamera() {
+  const selectedCameraId = cameraSelect.value;
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia({
+      video: { deviceId: selectedCameraId }
+    });
+    videoElement.srcObject = stream;
+  } catch (err) {
+    console.error("Errore nell'avviare la webcam:", err);
+  }
+}
+
+// Popola il menu a tendina all'avvio
+populateCameraSelect();
+
+// Avvia la prima webcam di default
+startCamera();
+
+// Aggiungi un event listener al menu a tendina per cambiare webcam
+cameraSelect.addEventListener('change', startCamera);

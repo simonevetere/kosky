@@ -58,3 +58,11 @@ button:hover {
   z-index: 100; /* Assicura che l'immagine sia in primo piano */
   display: none; /* Nasconde l'immagine inizialmente */
 }
+
+#videoElement {
+  position: fixed;
+  transform: translate(-50%, -50%); /* Centra l'immagine */
+  left: 50%;
+  bottom: 0;
+  height: 250px;
+}
