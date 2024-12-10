@@ -1,5 +1,5 @@
 
-let timeLeft = 2640; // 45 minuti in secondi
+let timeLeft = 2698; // 45 minuti in secondi
 let isRed = false;
 let timerInterval;
 
@@ -9,6 +9,8 @@ const resetButton = document.getElementById("resetButton");
 const ciackButton = document.getElementById("ciackButton");
 
 function startTimer() {
+
+  timerElement.innerHTML = `44:59`;
 
   bodyElement.classList.add("green");
   timerInterval = setInterval(function() {
