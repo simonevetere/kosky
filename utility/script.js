@@ -48,7 +48,9 @@ function blink() {
   setInterval(function() {
     if (isRed) {
       bodyElement.classList.remove("red");
+      bodyElement.classList.add("green");
     } else {
+      bodyElement.classList.remove("green");
       bodyElement.classList.add("red");
     }
     isRed = !isRed;
