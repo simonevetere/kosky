@@ -127,3 +127,20 @@ startCamera();
 
 // Aggiungi un event listener al menu a tendina per cambiare webcam
 cameraSelect.addEventListener('change', startCamera);
+
+
+const scriptTextArea = document.getElementById("scriptTextArea");
+const saveScriptButton = document.getElementById("saveScriptButton");
+
+// Carica lo script salvato in precedenza, se presente
+const savedScript = localStorage.getItem("koskyRecScript");
+if (savedScript) {
+  scriptTextArea.value = savedScript;
+}
+
+// Salva lo script nella memoria del browser
+saveScriptButton.addEventListener("click", function() {
+  const script = scriptTextArea.value;
+  localStorage.setItem("koskyRecScript", script);
+  console.log("Script salvato!");
+});

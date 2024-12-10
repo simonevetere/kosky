@@ -65,8 +65,21 @@ button:hover {
 
 #videoElement {
   position: fixed;
-  transform: translate(-50%, -50%); /* Centra l'immagine */
+  transform: translate(-50%);
   left: 50%;
   bottom: 0;
   height: 250px;
+}
+
+#scriptTextArea {
+  width: 80%;
+  height: 150px;
+  margin-top: 30px;
+  padding: 10px;
+  font-family: monospace; /* Usa un font monospazio per il codice */
+  white-space: pre-wrap; /* Permette di mantenere gli a capo */
+}
+
+#saveScriptButton {
+  margin-top: 10px;
 }
