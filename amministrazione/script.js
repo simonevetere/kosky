@@ -14,6 +14,8 @@ function accedi(){
           <a href="https://www.youtube.com/@latanadelkosky">canale YouTube</a>
           <a href="/gestione">gestione costi</a>
           <a href="/utility">REC utility</a>
+          <a href="https://drive.google.com/drive/folders/1JwlNan_MBCK4AHb5NF3oC1VrF-kiREZ1?usp=sharing">Google Drive</a>
+          <a href="https://www.dropbox.com/scl/fo/u1ypruwzm58psuliendvb/AATfgsulRjO_JWeBrztn86I?rlkey=88yk5yesubm0mf1it47v21jyg&st=p4tqxgyt&dl=0">dropbox</a>
         </div>
 
         <footer>

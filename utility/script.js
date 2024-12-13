@@ -1,5 +1,6 @@
 
-let timeLeft = 2698; // 45 minuti in secondi
+//let timeLeft = 1498;
+let timeLeft = 5;
 let isRed = false;
 let timerInterval;
 
@@ -10,7 +11,7 @@ const ciackButton = document.getElementById("ciackButton");
 
 function startTimer() {
 
-  timerElement.innerHTML = `44:59`;
+  timerElement.innerHTML = `24:59`;
 
   bodyElement.classList.add("green");
   timerInterval = setInterval(function() {
@@ -21,7 +22,7 @@ function startTimer() {
 
     if (timeLeft <= 0) {
       clearInterval(timerInterval);
-      timerElement.innerHTML = "sostituire batteria!";
+      timerElement.innerHTML = "1) sostituire batteria!<br>2) re-start video<br>3) ricordati di battere le mani!<br>";
       blink();
     }
 
@@ -37,15 +38,12 @@ function blink() {
 
   let audio2 = new Audio('../suoni/song.mp3');
 
-  // Nascondi l'immagine dopo un breve periodo (ad esempio, 2 secondi)
-  setTimeout(function() {
 
-    audio2.play();
+  audio2.play();
 
-    // Mostra l'immagine ahhh.gif
-    const rickroll = document.getElementById("rick-roll");
-    rickroll.style.display = "block";
-  }, 30000); 
+  // Mostra l'immagine ahhh.gif
+  const rickroll = document.getElementById("rick-roll");
+  rickroll.style.display = "block";
 
   setInterval(function() {
     if (isRed) {
@@ -56,7 +54,7 @@ function blink() {
       bodyElement.classList.add("red");
     }
     isRed = !isRed;
-  }, 500);
+  }, 200);
 }
 
 function playCiackSound() {
@@ -79,54 +77,6 @@ function playCiackSound() {
 
 resetButton.addEventListener("click", resetTimer);
 ciackButton.addEventListener("click", playCiackSound);
-
-const videoElement = document.getElementById('videoElement');
-const cameraSelect = document.getElementById('cameraSelect');
-
-// Funzione per ottenere la lista delle webcam disponibili
-async function getCameras() {
-  try {
-    const devices = await navigator.mediaDevices.enumerateDevices();
-    const cameras = devices.filter(device => device.kind === 'videoinput');
-    return cameras;
-  } catch (err) {
-    console.error("Errore nell'ottenere la lista delle webcam:", err);
-    return [];
-  }
-}
-
-// Funzione per popolare il menu a tendina con le webcam
-async function populateCameraSelect() {
-  const cameras = await getCameras();
-  cameras.forEach(camera => {
-    const option = document.createElement('option');
-    option.value = camera.deviceId;
-    option.text = camera.label || `Camera ${cameraSelect.length + 1}`;
-    cameraSelect.appendChild(option);
-  });
-}
-
-// Funzione per avviare la webcam selezionata
-async function startCamera() {
-  const selectedCameraId = cameraSelect.value;
-  try {
-    const stream = await navigator.mediaDevices.getUserMedia({
-      video: { deviceId: selectedCameraId }
-    });
-    videoElement.srcObject = stream;
-  } catch (err) {
-    console.error("Errore nell'avviare la webcam:", err);
-  }
-}
-
-// Popola il menu a tendina all'avvio
-populateCameraSelect();
-
-// Avvia la prima webcam di default
-startCamera();
-
-// Aggiungi un event listener al menu a tendina per cambiare webcam
-cameraSelect.addEventListener('change', startCamera);
 
 const scriptTextArea = document.getElementById("scriptTextArea");
 const saveScriptButton = document.getElementById("saveScriptButton");
